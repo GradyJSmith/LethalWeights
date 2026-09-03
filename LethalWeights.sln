@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37614.0 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LethalWeights", "LethalWeights\LethalWeights.csproj", "{04447E67-06DC-41BB-98B9-68A2A160593D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04447E67-06DC-41BB-98B9-68A2A160593D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04447E67-06DC-41BB-98B9-68A2A160593D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04447E67-06DC-41BB-98B9-68A2A160593D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04447E67-06DC-41BB-98B9-68A2A160593D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {70B73947-CF81-46B2-AEF4-4D187673CB7B}
+	EndGlobalSection
+EndGlobal
