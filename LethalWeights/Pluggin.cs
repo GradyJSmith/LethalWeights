@@ -35,6 +35,7 @@ namespace LethalWeights
 
             harmony.PatchAll(typeof(LethalWeightsBase));
             harmony.PatchAll(typeof(PlayerControllerBPatch));
+            harmony.PatchAll(typeof(KickIfModNotInstalled));
         }
     }
 }
