@@ -32,7 +32,7 @@ namespace LethalWeights.Patches
             float totalMass = 70f + massInKg;
 
             //Change float speed by item weight
-            float baseSpeed = 5.0f;
+            float baseSpeed = LethalWeights.LethalWeightsBase.configBaseSpeed.Value;
             float massPenalty = totalMass * 0.03f;
             float dynamicFloatSpeed = Mathf.Max(0.5f, baseSpeed - massPenalty);
 
