@@ -13,14 +13,17 @@ namespace LethalWeights.Patches
     internal class PlayerControllerBPatch
     {
         [HarmonyPatch("Update")]
-        [HarmonyPostfix]
+        [HarmonyPrefix]
         static void LethalWeightsPatch(PlayerControllerB __instance)
         {
             // Only apply movement logic for the local player
             if (!__instance.IsOwner || !__instance.isPlayerControlled) return;
 
-            //Set target upward float speed in meters per second
-            float targetFloatSpeed = 3.0f;
+            //Set bool to check if holding item
+            bool isHoldingItem = __instance.currentlyHeldObjectServer != null;
+
+            //If not holding item, revert to regualr game physics
+            if (!isHoldingItem) return;
 
             //Calculate mass in kg
             float weightInLbs = (__instance.carryWeight - 1.0f) * 105f;
@@ -28,14 +31,19 @@ namespace LethalWeights.Patches
             //Assuming base player weighs 70kg, this finds total mass
             float totalMass = 70f + massInKg;
 
-            //Set fall value to zero
-            __instance.fallValue = 0.15f;
+            //Change float speed by item weight
+            float baseSpeed = 5.0f;
+            float massPenalty = totalMass * 0.03f;
+            float dynamicFloatSpeed = Mathf.Max(0.5f, baseSpeed - massPenalty);
+
+            //Set fall value to 0.15
+            __instance.fallValue = dynamicFloatSpeed;
 
             //Set vertical movement vector
-            Vector3 verticalMove = Vector3.up * targetFloatSpeed;
+            //Vector3 verticalMove = Vector3.up * targetFloatSpeed;
 
             // Move the CharacterController smoothly upward
-            __instance.thisController.Move(verticalMove * Time.deltaTime);
+            //__instance.thisController.Move(verticalMove * Time.deltaTime);
         }
     }
 }
