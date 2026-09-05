@@ -39,6 +39,7 @@ namespace LethalWeights.Patches
             //Set fall value to 0.15
             __instance.fallValue = dynamicFloatSpeed;
 
+            //This is all old logic, may be reused in the future. It was only a concept
             //Set vertical movement vector
             //Vector3 verticalMove = Vector3.up * targetFloatSpeed;
 
