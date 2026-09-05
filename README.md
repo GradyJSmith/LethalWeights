@@ -1,6 +1,8 @@
 # LethalWeights
 This is a Lethal Company mod that makes it so any items you have subtract weight instead of adding it, making you float.
 
+**Check it out [here](https://thunderstore.io/c/lethal-company/p/GStarMods/LethalWeights/) on Thunderstore!**
+
 ## Features
 
 * **Anti-Gravity Scraps:** Holding any item in your hands overrides standard gravity and causes you to float upward.
